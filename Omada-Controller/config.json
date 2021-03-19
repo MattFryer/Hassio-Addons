@@ -5,8 +5,7 @@
   "slug": "omada-controller",
   "webui": "http://[HOST]:[PORT:8043]",
   "panel_icon": "mdi:access-point",
-  "panel_title": "Omada Controller",
-  "image": "mbentley/omada-controller:latest-{arch}",
+  "panel_title": "Omada Controller",,
   "description": "Allows for running TP-Link Omada Controller for managing TP-Link WAPs.",
   "url": "https://hub.docker.com/r/mbentley/omada-controller",
   "startup": "system",
@@ -37,5 +36,5 @@
     "TZ": "Etc/UTC"
   },
   "map": ["ssl"],
-  "arch": [ "amd64","armv7l","arm64"]
+  "arch": ["aarch64", "amd64", "armhf", "armv7", "i386"]
 }
