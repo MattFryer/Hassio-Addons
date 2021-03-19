@@ -1,2 +1,2 @@
-# Home Assistant TP-Link Omada Controller
-Wraps Docker Bub mbentley/omada-controller as a Home Assistant Add-On
+# Home Assistant (Hassio) Add-Ons
+A repository for my own Home Assistant add-ons. Most are just wrappers for existing Docker Hub images.
