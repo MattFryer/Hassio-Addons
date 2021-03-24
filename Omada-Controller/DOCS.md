@@ -7,7 +7,7 @@ TP-Link Omada Controller software allows centralised control of TP-Link EAPs. Th
 
 ---
 
-**NOTE:** This add-on currently only supports 64bit Raspberry Pi or other Arm64 based bords. If you would be interesting in running it on a different processor architecture, please raise an issue in the Github repository.
+**NOTE:** This add-on currently only supports 64bit Raspberry Pi or other Arm64 based boards. If you would be interesting in running it on a different processor architecture, please raise an issue in the Github repository.
 
 ---
 
