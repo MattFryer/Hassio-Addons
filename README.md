@@ -10,3 +10,4 @@ https://github.com/MattFryer/Hassio-Addons
 
 ## Add-ons in this repository
  - **[Omada Controller](/Omada-Controller/README.md)**: Deploy TP-Link Omada Controller software for managing TP-Link WAPs. Currently only supports arm64 architectures such as the Raspberry Pi 4 64bit.
+ - **[Lidarr](/Lidarr/README.md)**: Lidarr is a music collection manager for Usenet and BitTorrent users. Currently only supports arm64 architectures such as the Raspberry Pi 4 64bit.
