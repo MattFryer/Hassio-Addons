@@ -24,4 +24,4 @@ run -d \
   -v omada-data:/opt/tplink/EAPController/data \
   -v omada-work:/opt/tplink/EAPController/work \
   -v omada-logs:/opt/tplink/EAPController/logs \
-  mbentley/omada-controller:latest
+  mbentley/omada-controller:4.4-arm64
