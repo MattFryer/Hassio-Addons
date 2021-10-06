@@ -21,7 +21,7 @@ run -d \
   -e SSL_CERT_NAME="tls.crt" \
   -e SSL_KEY_NAME="tls.key" \
   -e TZ=Etc/UTC \
-  -v omada-data:/opt/tplink/EAPController/data \
-  -v omada-work:/opt/tplink/EAPController/work \
-  -v omada-logs:/opt/tplink/EAPController/logs \
+  -v omada-data:/data \
+  -v omada-work:/work \
+  -v omada-logs:/logs \
   mbentley/omada-controller:4.4-arm64
