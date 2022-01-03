@@ -1,27 +1,15 @@
-run -d \
-  --name omada-controller \
-  --restart unless-stopped \
-  -p 8088:8088 \
-  -p 8043:8043 \
-  -p 8843:8843 \
-  -p 29810:29810 \
-  -p 29810:29810/udp \
-  -p 29811:29811 \
-  -p 29811:29811/udp \
-  -p 29812:29812 \
-  -p 29812:29812/udp \
-  -p 29813:29813 \
-  -p 29813:29813/udp \
-  -e MANAGE_HTTP_PORT=8088 \
-  -e MANAGE_HTTPS_PORT=8043 \
-  -e PORTAL_HTTP_PORT=8088 \
-  -e PORTAL_HTTPS_PORT=8843 \
-  -e SHOW_SERVER_LOGS=true \
-  -e SHOW_MONGODB_LOGS=false \
-  -e SSL_CERT_NAME="tls.crt" \
-  -e SSL_KEY_NAME="tls.key" \
-  -e TZ=Etc/UTC \
-  -v omada-data:/data \
-  -v omada-work:/work \
-  -v omada-logs:/logs \
-  mbentley/omada-controller:4.4-arm64
+ARG BASE=mbentley/omada-controller:latest-arm64
+FROM ${BASE}
+HEALTHCHECK CMD wget --quiet --tries=1 --no-check-certificate http://127.0.0.1:8088 || exit 1
+
+COPY install.sh healthcheck.sh entrypoint.sh /
+
+RUN chmod +x /*.sh
+
+# Copy configuration properties
+COPY omada.properties log4j2.properties /opt/tplink/EAPController/properties/
+
+EXPOSE 8043/tcp 8088/tcp 27001/udp 27002/tcp 29810/tcp 29810/udp 29811/tcp 29811/udp 29812/tcp 29812/udp 29813/tcp 29813/udp
+
+ENTRYPOINT ["/entrypoint.sh"]
+CMD ["/usr/bin/java","-server","-Xms128m","-Xmx1024m","-XX:MaxHeapFreeRatio=60","-XX:MinHeapFreeRatio=30","-XX:+HeapDumpOnOutOfMemoryError","-cp","/opt/tplink/EAPController/lib/*:","com.tplink.omada.start.OmadaLinuxMain"]
