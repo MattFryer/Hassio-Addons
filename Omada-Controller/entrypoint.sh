@@ -102,15 +102,15 @@ then
   echo "done"
 fi
 
-# Import a cert from a possibly mounted secret or file at /cert
-if [ -f "/cert/${SSL_KEY_NAME}" ] && [ -f "/cert/${SSL_CERT_NAME}" ]
+# Import a cert from a possibly mounted secret or file at /ssl
+if [ -f "/ssl/${SSL_KEY_NAME}" ] && [ -f "/ssl/${SSL_CERT_NAME}" ]
 then
-  echo "INFO: Importing Cert from /cert/tls.[key|crt]"
+  echo "INFO: Importing Cert "
   # example certbot usage: ./certbot-auto certonly --standalone --preferred-challenges http -d mydomain.net
   openssl pkcs12 -export \
-    -inkey "/cert/${SSL_KEY_NAME}" \
-    -in "/cert/${SSL_CERT_NAME}" \
-    -certfile "/cert/${SSL_CERT_NAME}" \
+    -inkey "/ssl/${SSL_KEY_NAME}" \
+    -in "/ssl/${SSL_CERT_NAME}" \
+    -certfile "/ssl/${SSL_CERT_NAME}" \
     -name eap \
     -out /opt/tplink/EAPController/keystore/cert.p12 \
     -passout pass:tplink
@@ -127,7 +127,7 @@ fi
 
 # see if any of these files exist; if so, do not start as they are from older versions
 if [ -f /data/omada_controller/data/db/tpeap.0 ] || [ -f /data/omada_controller/data/db/tpeap.1 ] || [ -f /data/omada_controller/data/db/tpeap.ns ]
-then
+thenkeystore
   echo "ERROR: the data volume mounted to /data/omada_controller/data appears to have data from a previous version!"
   echo "  Follow the upgrade instructions at https://github.com/mbentley/docker-omada-controller#upgrading-to-41"
   exit 1
