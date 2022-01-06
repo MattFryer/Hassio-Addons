@@ -127,7 +127,7 @@ fi
 
 # see if any of these files exist; if so, do not start as they are from older versions
 if [ -f /data/omada_controller/data/db/tpeap.0 ] || [ -f /data/omada_controller/data/db/tpeap.1 ] || [ -f /data/omada_controller/data/db/tpeap.ns ]
-thenkeystore
+then
   echo "ERROR: the data volume mounted to /data/omada_controller/data appears to have data from a previous version!"
   echo "  Follow the upgrade instructions at https://github.com/mbentley/docker-omada-controller#upgrading-to-41"
   exit 1
