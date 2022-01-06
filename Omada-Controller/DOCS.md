@@ -13,7 +13,7 @@ TP-Link Omada Controller software allows centralised control of TP-Link EAPs. Th
 
 ## Installation
 
-1. Navigate in your Home Assistant frontend to **Supervisor** -> **Add-on Store** and add this URL as an additional repository: `https://github.com/MattFryer/Hassio-Addons`
+1. Navigate in your Home Assistant frontend to **Configuration** -> **Add-ons, Backups & Supervisor** -> **Add-ons** -> **Add-on Store** and add this URL as an additional repository: `https://github.com/MattFryer/Hassio-Addons`
 2. Find the "Omada Controller" add-on (normally at the bottom of the page) and click the "INSTALL" button.
 3. If the add-on has started OK click on "OPEN WEB UI" to get started with Omada Controller. If you Home Assistant is using an external domain name (eg. via DuckDNS) you may need to map port 8043 on your router to your Home Assistant device. Try visit https://homeassistant.local:8043/ in a browser instead.
 
