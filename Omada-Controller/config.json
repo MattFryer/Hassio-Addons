@@ -1,6 +1,6 @@
 {
     "name": "Omada Controller",
-    "version": "0.3.3",
+    "version": "0.3.4",
     "slug": "omada_controller",
     "description": "TP-Link Omada Controller software for managing WAPs",
     "url": "https://github.com/KristopherMackowiak/Hassio-Addons",
