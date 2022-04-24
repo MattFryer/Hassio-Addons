@@ -1,4 +1,4 @@
-ARG BASE=mbentley/omada-controller:latest
+ARG BASE=mbentley/omada-controller:5.1
 FROM ${BASE}
 HEALTHCHECK CMD wget --quiet --tries=1 --no-check-certificate http://127.0.0.1:8088 || exit 1
 
