@@ -1,9 +1,9 @@
 {
     "name": "Omada Controller",
-    "version": "0.2.3",
+    "version": "0.3.3",
     "slug": "omada_controller",
     "description": "TP-Link Omada Controller software for managing WAPs",
-    "url": "https://github.com/MattFryer/Hassio-Addons",
+    "url": "https://github.com/KristopherMackowiak/Hassio-Addons",
     "webui": "https://[HOST]:[PORT:8043]",
     "startup": "services",
     "arch": ["aarch64", "amd64", "armv7", "i386"],
@@ -22,7 +22,9 @@
         "29812/tcp": 29812,
         "29812/udp": 29812,
         "29813/tcp": 29813,
-        "29813/udp": 29813  
+        "29813/udp": 29813,
+        "29813/tcp": 29814,
+        "29813/udp": 29814
     },
     "ports_description": {
         "8088/tcp": "Used for Omada Controller interface and API",
@@ -37,7 +39,9 @@
         "29812/tcp": "Used for device discovery",
         "29812/udp": "Used for device discovery",
         "29813/tcp": "Used for device discovery",
-        "29813/udp": "Used for device discovery"
+        "29813/udp": "Used for device discovery",
+        "29814/tcp": "Used for device discovery",
+        "29814/udp": "Used for device discovery"
       },
     "map": ["backup:rw", "ssl"],
     "services": [],
