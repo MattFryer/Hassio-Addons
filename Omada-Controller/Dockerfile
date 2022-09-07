@@ -2,9 +2,9 @@ ARG BASE=mbentley/omada-controller:5.5
 FROM ${BASE}
 HEALTHCHECK CMD wget --quiet --tries=1 --no-check-certificate http://127.0.0.1:8088 || exit 1
 
-COPY install.sh healthcheck.sh entrypoint.sh /
+#COPY install.sh healthcheck.sh entrypoint.sh /
 
-RUN chmod +x /*.sh
+#RUN chmod +x /*.sh
 
 # Copy configuration properties
 COPY omada.properties log4j2.properties /opt/tplink/EAPController/properties/
