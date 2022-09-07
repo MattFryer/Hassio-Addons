@@ -1,6 +1,6 @@
 {
     "name": "Omada Controller",
-    "version": "0.3.4",
+    "version": "0.1.0",
     "slug": "omada_controller",
     "description": "TP-Link Omada Controller software for managing WAPs",
     "url": "https://github.com/KristopherMackowiak/Hassio-Addons",
@@ -46,7 +46,7 @@
     "map": ["backup:rw", "ssl"],
     "services": [],
     "options": {
-        "ssl": true,
+        "ssl": false,
         "certfile": "fullchain.pem",
         "keyfile": "privkey.pem"
     },
