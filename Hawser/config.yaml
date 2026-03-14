@@ -1,0 +1,32 @@
+name: "Hawser"
+description: "Docker stack deployment and management service"
+version: "1.0.0"
+slug: "hawser"
+init: false
+arch:
+  - aarch64
+  - amd64
+  - armhf
+  - armv7
+
+url: "https://github.com/finsys/hawser"
+
+ports:
+  2376/tcp: 2376
+
+ports_description:
+  2376/tcp: "Hawser Docker management API"
+
+options:
+  token: "your-secret-token"
+
+schema:
+  token: str
+
+docker_api: true
+
+map:
+  - type: share
+    path: /data/stacks
+
+image: "ghcr.io/finsys/hawser:{arch}"
