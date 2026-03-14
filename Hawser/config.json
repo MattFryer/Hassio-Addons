@@ -1,0 +1,24 @@
+{
+    "name": "Hawser",
+    "version": "1.0.0",
+    "slug": "hawser",
+    "description": "Docker stack deployment and management via a remote API",
+    "url": "https://github.com/finsys/hawser",
+    "startup": "services",
+    "arch": ["aarch64", "amd64"],
+    "init": false,
+    "docker_api": true,
+    "ports": {
+        "2376/tcp": 2376
+    },
+    "ports_description": {
+        "2376/tcp": "Hawser Docker management API"
+    },
+    "map": ["share:rw"],
+    "options": {
+        "token": "your-secret-token"
+    },
+    "schema": {
+        "token": "str"
+    }
+}

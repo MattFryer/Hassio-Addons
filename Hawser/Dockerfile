@@ -1,13 +1,7 @@
-ARG BUILD_FROM
-FROM ${BUILD_FROM}
+ARG BASE=ghcr.io/finsys/hawser:latest
+FROM ${BASE}
 
-# Install bashio dependencies if not already present
-RUN apk add --no-cache bash curl jq
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 
-# Copy the run script
-COPY rootfs /
-
-# Make run script executable
-RUN chmod +x /etc/services.d/hawser/run
-
-CMD ["/init"]
+ENTRYPOINT ["/entrypoint.sh"]
