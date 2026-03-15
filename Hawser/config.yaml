@@ -1,5 +1,5 @@
 name: "Hawser"
-version: "0.2.24-0"
+version: "0.2.24-1"
 slug: hawser
 description: "Docker stack deployment and management via a remote API"
 url: "https://github.com/finsys/hawser"
@@ -15,7 +15,8 @@ ports:
 ports_description:
   2376/tcp: "Hawser Docker management API"
 map:
-  - share:rw
+  - type: share
+    path: /data/stacks
 options:
   token: "your-secret-token"
 schema:
