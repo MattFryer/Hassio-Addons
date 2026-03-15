@@ -1,6 +1,6 @@
 {
     "name": "Hawser",
-    "version": "1.0.0",
+    "version": "0.2.24-0",
     "slug": "hawser",
     "description": "Docker stack deployment and management via a remote API",
     "url": "https://github.com/finsys/hawser",
