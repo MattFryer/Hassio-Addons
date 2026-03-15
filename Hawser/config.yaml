@@ -1,32 +1,21 @@
 name: "Hawser"
-description: "Docker stack deployment and management service"
-version: "1.0.0"
-slug: "hawser"
-init: false
+version: "0.2.24-0"
+slug: hawser
+description: "Docker stack deployment and management via a remote API"
+url: "https://github.com/finsys/hawser"
+startup: services
 arch:
   - aarch64
   - amd64
-  - armhf
-  - armv7
-
-url: "https://github.com/finsys/hawser"
-
+init: false
+host_network: false
 ports:
   2376/tcp: 2376
-
 ports_description:
   2376/tcp: "Hawser Docker management API"
-
+map:
+  - share:rw
 options:
   token: "your-secret-token"
-
 schema:
   token: str
-
-docker_api: true
-
-map:
-  - type: share
-    path: /data/stacks
-
-image: "ghcr.io/finsys/hawser:{arch}"

@@ -50,9 +50,9 @@ jobs:
           # Update Dockerfile
           sed -i "s|ghcr.io/finsys/hawser:.*|ghcr.io/finsys/hawser:${NEW}|" Hawser/Dockerfile
 
-          # Update version in config.json, appending -0 to allow add-on patches
+          # Update version in config.yaml, appending -0 to allow add-on patches
           # without version mismatch (e.g. 0.2.24-0, 0.2.24-1, ...)
-          sed -i "s/\"version\": \".*\"/\"version\": \"${NEW}-0\"/" Hawser/config.json
+          sed -i "s/^version: .*/version: \"${NEW}-0\"/" Hawser/config.yaml
 
       - name: Open pull request
         if: steps.check.outputs.needed == 'true'
