@@ -9,6 +9,7 @@ arch:
   - amd64
 init: false
 host_network: false
+docker_api: true
 ports:
   2376/tcp: 2376
 ports_description:
