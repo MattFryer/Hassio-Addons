@@ -21,10 +21,6 @@ export DOCKER_SOCKET="/run/docker.sock"
 mkdir -p /share/hawser/stacks
 ln -sf /share/hawser/stacks /data/stacks
 
-# Diagnostics to help debug socket access issues
-echo "INFO: Checking Docker socket availability..."
-ls -la /run/docker.sock 2>&1 || echo "WARN: /run/docker.sock not found"
-
 echo "INFO: Starting Hawser on port ${PORT}"
 
 exec /usr/local/bin/hawser
