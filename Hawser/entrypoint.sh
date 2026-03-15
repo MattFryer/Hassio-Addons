@@ -17,7 +17,7 @@ export TOKEN="${TOKEN}"
 export PORT="2376"
 export DOCKER_SOCKET="/var/run/docker.sock"
 
-# Map persistent stacks storage from HA shared folder into expected path
+# Store stacks in HA shared storage so they persist across restarts
 mkdir -p /share/hawser/stacks
 ln -sf /share/hawser/stacks /data/stacks
 
