@@ -12,6 +12,17 @@ if [ -z "${TOKEN}" ]; then
     echo "ERROR: No token configured. Set a token in the add-on configuration."
     exit 1
 fi
+
+if [ "${TOKEN}" = "your-secret-token" ]; then
+    echo "ERROR: Token has not been changed from the default. Set a unique secret token in the add-on configuration before starting."
+    exit 1
+fi
+
+if [ ! -S "/run/docker.sock" ]; then
+    echo "ERROR: Docker socket not found at /run/docker.sock."
+    echo "ERROR: To fix this, go to the Hawser app (formerly add-on) page in Home Assistant, scroll down to 'Protection mode' and disable it, then restart the add-on."
+    exit 1
+fi
  
 export TOKEN="${TOKEN}"
 export PORT="2376"
