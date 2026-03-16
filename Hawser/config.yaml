@@ -1,5 +1,5 @@
 name: "Hawser"
-version: "0.2.37-0"
+version: "0.2.37-1"
 slug: hawser
 description: "Docker stack deployment and management via a remote API"
 url: "https://github.com/finsys/hawser"
