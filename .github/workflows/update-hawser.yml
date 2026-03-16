@@ -42,7 +42,7 @@ jobs:
             echo "needed=true" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Update Dockerfile and config.json
+      - name: Update Dockerfile and config.yaml
         if: steps.check.outputs.needed == 'true'
         run: |
           NEW="${{ steps.upstream.outputs.version }}"
