@@ -1,26 +1,21 @@
 # Hawser
 
-Docker stack deployment and management service, accessible via a remote API.
+Docker stack deployment and management service, giving Dockhand access to your Home Assistant environment.
+
+## Security Note
+For Hawser to be able to monitor and manage your Home Assistant Supervisor containers, it needs access to the Docker socket of the host environment. This give Hawser full access to start, stop or modify any container running on the host, including Home Assistant itself.
+
+## Protection mode
+Protection mode must be **disabled** for this App in order for it to have access to the host docker environment.
 
 ## Configuration
 
 | Option  | Required | Description |
 |---------|----------|-------------|
-| `token` | Yes      | Secret token used to authenticate API requests |
+| `token` | Yes      | Secret token used to authenticate API requests from Dockhand. Must be changed from default value. |
 
 ## Ports
 
-| Port   | Description |
-|--------|-------------|
-| `2376` | Hawser Docker management API |
-
-## Data
-
-Stack definitions are stored in `/share/hawser/stacks` on the Home Assistant host,
-so they persist across add-on restarts and updates.
-
-## Security Note
-
-This add-on uses `docker_api: true` which grants it access to the host Docker socket.
-This gives it significant control over the host system. Only install from trusted sources
-and ensure your `token` is set to a strong, unique value.
+| Option  | Required | Description |
+|---------|----------|-------------|
+| `port`  | Yes      | Hawser Docker management API port. Defaults to `2376` |
