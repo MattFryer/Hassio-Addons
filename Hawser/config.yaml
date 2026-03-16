@@ -11,12 +11,14 @@ arch:
 init: false
 host_network: false
 docker_api: true
+watchdog: http://[HOST]:[PORT:2376]/_hawser/health
 ports:
   2376/tcp: 2376
 ports_description:
   2376/tcp: "Hawser Docker management API"
 map:
   - type: share
+    path: /data/stacks
     read_only: false
 options:
   token: "your-secret-token"
