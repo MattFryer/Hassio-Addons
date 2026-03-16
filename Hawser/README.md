@@ -7,7 +7,7 @@
 ![Supports i386 Architecture](https://img.shields.io/badge/i386-no-red.svg)
 
 <p align="center">
-  <img width="150%" src="https://github.com/Finsys/hawser/raw/main/logo/hawser.png">
+  <img width="50%" src="https://github.com/Finsys/hawser/raw/main/logo/hawser.png">
 </p>
 
 [Hawser](https://github.com/Finsys/hawser) is a lightweight Go agent that enables [Dockhand](https://dockhand.pro/) to manage Docker hosts in various network configurations.
@@ -15,16 +15,16 @@
 This Home Assistant App (Formerly Add-on) deploys Hawser to your Home Assistant OS or Supervised installations, allowing you to manage and monitor containers. 
 
 > [!CAUTION]
-> For Hawser to be able to monitor and manage your Home Assistant Supervisor containers, it needs access to the Docker socket of the host environment. This give Hawser full access to start, stop or modify any container running on the host, including Home Assistant itself.  
+> For Hawser to be able to monitor and manage your Home Assistant Supervisor containers, it needs access to the Docker socket of the host environment. This gives Hawser full access to start, stop or modify any container running on the host, including Home Assistant itself.  
 
 ## Installation
-1. Please first follow the instructions to [install the respository into your Home Assistant App store](/README.md).
-2. Search for "Hawser" in the Home Assitant App store or alternatively click the below button:
+1. Please first follow the instructions to [install the repository into your Home Assistant App store](/README.md#installation)
+2. Search for "Hawser" in the Home Assistant App store or alternatively click the below button:
 
     [![Open your Home Assistant instance and show the dashboard of an app.](https://my.home-assistant.io/badges/supervisor_addon.svg)](https://my.home-assistant.io/redirect/supervisor_addon/?addon=d1f42497_hawser&repository_url=https%3A%2F%2Fgithub.com%2FMattFryer%2FHassio-Addons)
 
 3. Install the App 
-4. Disable ```Protection mode``` for the App. This is required to allow Haswer to monitor and manage container. 
+4. Disable ```Protection mode``` for the App. This is required to allow Hawser to monitor and manage container. 
 
 > [!NOTE]
 > **DON'T** start the App before following the below configuration steps.

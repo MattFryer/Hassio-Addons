@@ -1,5 +1,3 @@
-
-
 [![Home Assistant](https://img.shields.io/badge/Home%20Assistant-Apps-Blue?logo=homeassistant&logoColor=%23fff&color=%2303a9f4)](https://www.home-assistant.io/)
 [![GitHub license](https://img.shields.io/github/license/MattFryer/Hassio-Addons.svg?logo=gnu&logoColor=ffffff)](https://github.com/MattFryer/Hassio-Addons/blob/master/LICENSE)
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/t/MattFryer/Hassio-Addons)
@@ -12,7 +10,10 @@
 ![GitHub watchers](https://img.shields.io/github/watchers/MattFryer/Hassio-Addons)
 
 # Home Assistant Apps (Formerly Add-Ons)
-This repository contains my personal add-ons for Home Assistant. Feel free to install and use the add-ons at your own risk if you think they will be useful. 
+This repository contains my personal apps for Home Assistant. Feel free to install and use the apps at your own risk if you think they will be useful. 
+
+> [!CAUTION]
+> The apps in this repository are provided as-is, without any warranties or guarantees of any kind. Use at your own risk. The maintainer accepts no responsibility for any loss, damage, or issues arising from their use.
 
 ## Installation
 ### Option 1
@@ -30,10 +31,14 @@ Each App can then be installed from the App store.
 3. Click on the 3 dots menu in the top right corner and select **Repositories**
 4. Add this URL as an additional repository: ```https://github.com/MattFryer/Hassio-Addons```
 
-Each App can then be installed from the App store.
+Each App can then be installed from the App store
 
 ## Apps in this repository
 The following Apps are available in this repository:
 
   - **[Hawser](/Hawser/README.md)**: A remote Docker agent for [Dockhand](https://dockhand.pro/) - manage your Home Assistant Supervisor containers from Dockhand.
+
+### Deprecated Apps
+The following apps have have been depricated and either will not be update or have been removed.
+
  - **Omada Controller**: Depricated! I'd suggest using this version instead [https://github.com/jkunczik/home-assistant-omada](https://github.com/jkunczik/home-assistant-omada).
