@@ -1,0 +1,78 @@
+name: Update BarcodeVault
+
+on:
+  schedule:
+    - cron: '0 8 * * *'  # Daily at 08:00 UTC
+  workflow_dispatch:      # Allow manual trigger from GitHub UI
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Get latest BarcodeVault release
+        id: upstream
+        run: |
+          LATEST=$(curl -fsSL "https://hub.docker.com/v2/repositories/mattfryer/barcodevault/tags?page_size=100&ordering=last_updated" \
+            | jq -r '.results[].name' \
+            | grep -E '^[0-9]+\.[0-9]+\.[0-9]+$' \
+            | sort -V \
+            | tail -1)
+          echo "version=${LATEST}" >> "$GITHUB_OUTPUT"
+          echo "Latest upstream version: ${LATEST}"
+
+      - name: Get current pinned version
+        id: current
+        run: |
+          CURRENT=$(grep -oP '(?<=mattfryer/barcodevault:)\S+' BarcodeVault/Dockerfile)
+          echo "version=${CURRENT}" >> "$GITHUB_OUTPUT"
+          echo "Current pinned version: ${CURRENT}"
+
+      - name: Check if update needed
+        id: check
+        run: |
+          if [ "${{ steps.upstream.outputs.version }}" = "${{ steps.current.outputs.version }}" ]; then
+            echo "Already up to date."
+            echo "needed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "Update available: ${{ steps.current.outputs.version }} → ${{ steps.upstream.outputs.version }}"
+            echo "needed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Update Dockerfile and config.yaml
+        if: steps.check.outputs.needed == 'true'
+        run: |
+          NEW="${{ steps.upstream.outputs.version }}"
+
+          # Update Dockerfile
+          sed -i "s|mattfryer/barcodevault:.*|mattfryer/barcodevault:${NEW}|" BarcodeVault/Dockerfile
+
+          # Update version in config.yaml, appending -0 to allow add-on patches
+          # without version mismatch (e.g. 1.0.0-0, 1.0.0-1, ...)
+          sed -i "s/^version: .*/version: \"${NEW}-0\"/" BarcodeVault/config.yaml
+
+      - name: Open pull request
+        if: steps.check.outputs.needed == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: update/barcodevault-${{ steps.upstream.outputs.version }}
+          commit-message: "chore: update BarcodeVault to v${{ steps.upstream.outputs.version }}"
+          title: "Update BarcodeVault to v${{ steps.upstream.outputs.version }}"
+          body: |
+            Automated update of the BarcodeVault add-on.
+
+            - **Previous version:** `${{ steps.current.outputs.version }}`
+            - **New version:** `${{ steps.upstream.outputs.version }}`
+
+            ### Docker Hub
+            https://hub.docker.com/r/mattfryer/barcodevault/tags
+
+            Please review the image changes before merging.
+          labels: dependencies

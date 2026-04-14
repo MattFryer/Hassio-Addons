@@ -36,9 +36,11 @@ Each App can then be installed from the App store
 ## Apps in this repository
 The following Apps are available in this repository:
 
+  - **[BarcodeVault](/BarcodeVault/README.md)**: A self-hosted barcode scanning hub — looks up product data from multiple APIs, caches results locally, and pushes scan events to Home Assistant. Great for ESPHome based and other barcode scanners. Looked up products can be added to Home Assistant shopping lists (including those synced from other apps such as Mealie).
   - **[Hawser](/Hawser/README.md)**: A remote Docker agent for [Dockhand](https://dockhand.pro/) - manage your Home Assistant Supervisor containers from Dockhand.
 
-### Deprecated Apps
-The following apps have have been depricated and either will not be update or have been removed.
 
- - **Omada Controller**: Depricated! I'd suggest using this version instead [https://github.com/jkunczik/home-assistant-omada](https://github.com/jkunczik/home-assistant-omada).
+### Deprecated Apps
+The following apps have have been deprecated and either will not be update or have been removed.
+
+ - **Omada Controller**: Deprecated! I'd suggest using this version instead [https://github.com/jkunczik/home-assistant-omada](https://github.com/jkunczik/home-assistant-omada).

@@ -1,5 +1,8 @@
 compare/
 *.zip
 
+# Ignore Claude Code memory and project files
+.claude/
+
 #Ignore vscode AI rules
 .github/instructions/codacy.instructions.md
