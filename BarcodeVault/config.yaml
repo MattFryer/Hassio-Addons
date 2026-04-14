@@ -12,6 +12,7 @@ init: false
 host_network: false
 ingress: true
 ingress_port: 5000
+panel_icon: mdi:barcode-scan
 ports:
   5000/tcp: 5000
 ports_description:
