@@ -18,7 +18,7 @@ Integrates well with Home Assistant using the BarcodeVault integration.
 1. Please first follow the instructions to [install the repository into your Home Assistant App store](/README.md#installation)
 2. Search for "BarcodeVault" in the Home Assistant App store or alternatively click the below button:
 
-    [![Open your Home Assistant instance and show the dashboard of an app.](https://my.home-assistant.io/badges/supervisor_addon.svg)]()
+    [![Open your Home Assistant instance and show the dashboard of an app.](https://my.home-assistant.io/badges/supervisor_addon.svg)](https://my.home-assistant.io/redirect/supervisor_addon/?addon=d1f42497_barcodevault&repository_url=https%3A%2F%2Fgithub.com%2FMattFryer%2FHassio-Addons)
 
 3. Install the App 
 4. Open the app from the Home Assistant sidebar to configure API keys, MQTT, authentication, and more.
