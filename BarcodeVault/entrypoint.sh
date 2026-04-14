@@ -19,4 +19,4 @@ exec gunicorn \
     --timeout 30 \
     --preload \
     --access-logfile - \
-    main:app
+    hassio_wsgi:app
