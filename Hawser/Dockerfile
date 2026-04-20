@@ -1,5 +1,5 @@
 # Grab the upstream Hawser image
-ARG BASE=ghcr.io/finsys/hawser:0.2.39
+ARG BASE=ghcr.io/finsys/hawser:0.2.40
 FROM ${BASE}
 
 # Replace the entrypoint with the one from this repo
